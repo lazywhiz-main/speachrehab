@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OUTLOUD — 한국어 낭독 지문</title>
+    <meta
+      name="description"
+      content="수능형·이야기·뉴스·대화·유머까지. 장르별 한국어 지문을 골라 소리 내어 읽는 사이트."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Syne:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=5" />
+  </head>
+  <body>
+    <div class="atmosphere" aria-hidden="true">
+      <div class="blob blob-a"></div>
+      <div class="blob blob-b"></div>
+      <div class="grain"></div>
+    </div>
+
+    <header class="topbar">
+      <a class="brand" href="#" data-view="list">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">OUTLOUD</span>
+      </a>
+      <nav class="top-nav" aria-label="주요 메뉴">
+        <button type="button" data-action="surprise" class="btn btn-primary btn-nav">
+          랜덤 읽기
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <section id="view-list" class="view is-visible" aria-label="지문">
+        <div class="list-head">
+          <h1 class="page-title">지문</h1>
+          <p class="page-lead">장르 고르거나, 그냥 찍어서 읽어.</p>
+        </div>
+
+        <div class="filters">
+          <div class="filter-row" role="group" aria-label="장르" id="genre-filters">
+            <button type="button" class="chip is-active" data-genre="all">전체</button>
+          </div>
+          <div class="filter-row" role="group" aria-label="길이감">
+            <button type="button" class="chip is-active" data-level="all">전체</button>
+            <button type="button" class="chip" data-level="easy">짧게</button>
+            <button type="button" class="chip" data-level="mid">보통</button>
+            <button type="button" class="chip" data-level="hard">길게</button>
+          </div>
+        </div>
+
+        <p class="result-count" id="result-count"></p>
+        <div class="passage-list" id="passage-list"></div>
+      </section>
+
+      <section id="view-read" class="view" aria-label="낭독" hidden>
+        <button type="button" class="back-link" data-view="list">← 목록</button>
+
+        <article class="reader" id="reader">
+          <header class="reader-meta">
+            <div class="reader-tags">
+              <span class="tag" id="read-genre"></span>
+              <span class="tag tag-level" id="read-level"></span>
+            </div>
+            <h1 class="reader-title" id="read-title"></h1>
+            <p class="reader-stats" id="read-stats"></p>
+          </header>
+
+          <div class="reader-toolbar">
+            <label class="size-control">
+              글자
+              <input type="range" id="font-size" min="18" max="36" value="24" />
+            </label>
+            <button type="button" class="btn btn-small" id="btn-sentence" aria-pressed="false">
+              문장 하이라이트
+            </button>
+            <button type="button" class="btn btn-small" id="btn-prev-sentence" disabled>
+              이전
+            </button>
+            <button type="button" class="btn btn-small" id="btn-next-sentence" disabled>
+              다음
+            </button>
+          </div>
+
+          <div class="reader-body" id="read-body"></div>
+
+          <footer class="reader-footer">
+            <button type="button" class="btn btn-ghost" data-action="another-same">
+              같은 장르 다른 글
+            </button>
+            <button type="button" class="btn btn-primary" data-action="surprise">
+              다음 랜덤
+            </button>
+          </footer>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>OUTLOUD · 한국어 낭독 지문</p>
+    </footer>
+
+    <script src="passages.js?v=4"></script>
+    <script src="app.js?v=4"></script>
+  </body>
+</html>
