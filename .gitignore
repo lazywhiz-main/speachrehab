@@ -2,3 +2,4 @@
 .vercel
 .deploy-*.json
 gen_passages.py
+expand_passages.py
