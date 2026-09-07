@@ -2,7 +2,9 @@
 
 장르별 한국어 낭독 지문 사이트.
 
-## 실행
+**Live:** https://lazywhiz-main.github.io/speachrehab/
+
+## 로컬 실행
 
 ```bash
 open index.html
@@ -13,8 +15,6 @@ open index.html
 ```bash
 python3 -m http.server 5173
 ```
-
-http://localhost:5173
 
 ## 구성
 
